@@ -1,0 +1,1 @@
+C:\Users\firat\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\RastaurantPosMAUI.csproj;x64
