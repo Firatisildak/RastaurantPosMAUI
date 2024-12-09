@@ -1,1 +1,1 @@
-C:\Users\firat\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\RastaurantPosMAUI.csproj;x64
+C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\RastaurantPosMAUI.csproj;x64

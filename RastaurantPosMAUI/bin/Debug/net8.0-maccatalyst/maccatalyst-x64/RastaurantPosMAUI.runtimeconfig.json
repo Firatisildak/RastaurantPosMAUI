@@ -4,11 +4,11 @@
     "includedFrameworks": [
       {
         "name": "Microsoft.NETCore.App",
-        "version": "8.0.5"
+        "version": "8.0.11"
       },
       {
         "name": "Microsoft.MacCatalyst",
-        "version": "17.2.8053"
+        "version": "18.0.8316"
       }
     ],
     "configProperties": {
@@ -25,6 +25,8 @@
       "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
       "System.Resources.UseSystemResourceKeys": false,
       "System.Runtime.InteropServices.BuiltInComInterop.IsSupported": false,
+      "System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting": false,
+      "System.Runtime.InteropServices.EnableCppCLIHostActivation": false,
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
       "System.StartupHookProvider.IsSupported": false,
       "System.Text.Encoding.EnableUnsafeUTF7Encoding": false,
