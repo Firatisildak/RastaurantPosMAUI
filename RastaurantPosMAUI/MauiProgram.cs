@@ -1,5 +1,8 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using RastaurantPosMAUI.Data;
+using RastaurantPosMAUI.Pages;
+using RastaurantPosMAUI.ViewModels;
 
 namespace RastaurantPosMAUI
 {
@@ -19,6 +22,9 @@ namespace RastaurantPosMAUI
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<DatabaseService>()
+            .AddSingleton<HomeViewModel>()
+                .AddSingleton<MainPage>();
 
             return builder.Build();
         }
