@@ -16,7 +16,7 @@ public partial class MainPage : ContentPage
     
     private async void Initialize()
     {
-        await _homeViewModel.InitializeAsyn();
+        await _homeViewModel.InitializeAsync();
     }
 
 }

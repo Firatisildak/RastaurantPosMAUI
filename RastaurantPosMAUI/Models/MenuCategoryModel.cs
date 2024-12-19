@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using RastaurantPosMAUI.Data;
 
 namespace RastaurantPosMAUI.Models
 {
@@ -11,7 +12,7 @@ namespace RastaurantPosMAUI.Models
         [ObservableProperty]
         private bool _isSelected;
 
-        public static MenuCategoryModel FromEntity(MenuCategoryModel entity) =>
+        public static MenuCategoryModel FromEntity(MenuCategory entity) =>
             new() 
             {
                 Id = entity.Id,
