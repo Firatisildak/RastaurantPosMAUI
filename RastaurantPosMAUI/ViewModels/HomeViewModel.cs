@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
+using MenuItem = RastaurantPosMAUI.Data.MenuItem;
 
 namespace RastaurantPosMAUI.ViewModels
 {
@@ -11,6 +12,9 @@ namespace RastaurantPosMAUI.ViewModels
 
         [ObservableProperty]
         private MenuCategoryModel[] _categories = [];
+
+        [ObservableProperty]
+        private MenuItem[] _menuItems = [];
 
         [ObservableProperty]
         private MenuCategoryModel? _selectedCategory = null;
@@ -41,14 +45,19 @@ namespace RastaurantPosMAUI.ViewModels
             Categories[0].IsSelected = true;
             SelectedCategory = Categories[0];
 
+            MenuItems = await _databaseService.GetMenuItemsByCategoryAsync(SelectedCategory.Id);
+
             IsLoading = false;
         }
 
         [RelayCommand]
-        private void SelectCategory(int categoryId)
+        private async Task SelectCategory(int categoryId)
         {
             if (SelectedCategory.Id == categoryId)
                 return;
+
+            IsLoading = true;
+
             var existingSelectedCategory = Categories.First(c => c.IsSelected);
             existingSelectedCategory.IsSelected = false;
 
@@ -56,6 +65,10 @@ namespace RastaurantPosMAUI.ViewModels
             newlySelectedCategory.IsSelected = true;
 
             SelectedCategory= newlySelectedCategory;
+           
+            MenuItems = await _databaseService.GetMenuItemsByCategoryAsync(SelectedCategory.Id);
+
+            IsLoading = false;
         }
 
     }

@@ -13,7 +13,7 @@ namespace RastaurantPosMAUI.Models
         private bool _isSelected;
 
         public static MenuCategoryModel FromEntity(MenuCategory entity) =>
-            new() 
+            new()
             {
                 Id = entity.Id,
                 Name = entity.Name,

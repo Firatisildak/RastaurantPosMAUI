@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text; 
-using System.Threading.Tasks;
-using RestaurantPosMAUI.Data;
+﻿using RestaurantPosMAUI.Data;
 using SQLite;
-namespace RastaurantPosMAUI.Data 
+namespace RastaurantPosMAUI.Data
 {
     public class DatabaseService : IAsyncDisposable
     {
@@ -30,7 +25,7 @@ namespace RastaurantPosMAUI.Data
         private async Task SeedDataAsync()
         {
             var firstCategory = await _connection.Table<MenuCategory>().FirstOrDefaultAsync();
-            
+
             if (firstCategory != null)
                 return;
 
@@ -43,7 +38,7 @@ namespace RastaurantPosMAUI.Data
             await _connection.InsertAllAsync(mappings);
         }
 
-        public async Task<MenuCategory[]> GetMenuCategoriesAsync()=>
+        public async Task<MenuCategory[]> GetMenuCategoriesAsync() =>
             await _connection.Table<MenuCategory>().ToArrayAsync();
 
         public async Task<MenuItem[]> GetMenuItemsByCategoryAsync(int categoryId)
@@ -55,13 +50,13 @@ namespace RastaurantPosMAUI.Data
                             On menu.Id = mapping.MenuItemId
                         WHERE mapping.MenuCategoryId=?
                         ";
-            var menuItems= await _connection.QueryAsync<MenuItem>(query, categoryId);
-            return [..menuItems];
+            var menuItems = await _connection.QueryAsync<MenuItem>(query, categoryId);
+            return [.. menuItems];
         }
 
         public async ValueTask DisposeAsync()
         {
-            if (_connection != null) 
+            if (_connection != null)
                 await _connection.CloseAsync();
         }
     }

@@ -15,5 +15,5 @@ public class OrderItem
     public int Quantity { get; set; }
 
     [Ignore]
-    public decimal? Amount => Quantity* Price;
+    public decimal? Amount => Quantity * Price;
 }

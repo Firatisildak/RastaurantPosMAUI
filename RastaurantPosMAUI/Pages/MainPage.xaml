@@ -11,7 +11,7 @@
     <Grid ColumnDefinitions=".75*, .25*">
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" RowSpacing="10">
             <Label Grid.Row="0" Text="Hello, Fırat"/>
-            
+
             <CollectionView Grid.Row="1" ItemsSource="{Binding Categories}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
@@ -53,8 +53,43 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
-            <Label Grid.Row="2" Text="Menu Items List"/>
+
+            <Grid Grid.Row="2">
+                <CollectionView ItemsSource="{Binding MenuItems}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout HorizontalItemSpacing="10" VerticalItemSpacing="10" Orientation="Vertical" Span="4"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="data:MenuItem">
+                            <Border>
+                                <VerticalStackLayout>
+                                    <Border BackgroundColor="{StaticResource LightWheat}" HeightRequest="150">
+                                        <Image MaximumHeightRequest="150" WidthRequest="250" Source="{Binding Icon}"/>
+                                    </Border>
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Description}"/>
+                                    <FlexLayout JustifyContent="SpaceBetween">
+                                        <Label Text="{Binding Price, StringFormat='{0:C}'}"/>
+                                        <ImageButton Source="shopping_bag_regular_24.png"/>
+                                    </FlexLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <BoxView
+                    HorizontalOptions="Fill"
+                    IsVisible="{Binding IsLoading}"
+                    Opacity="0.5"
+                    VerticalOptions="Fill"
+                    Color="{StaticResource LightWheat}"/>
+                <ActivityIndicator IsRunning="{Binding IsLoading}"
+                    HeightRequest="25"
+                    WidthRequest="25"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Color="Maroon"/>
+            </Grid>
         </Grid>
         <Grid Grid.Column="1" BackgroundColor="{StaticResource LightWheat}">
             <Label Text="Current Order Items"/>
