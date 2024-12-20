@@ -34,9 +34,9 @@
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Pages\\MainPage.xaml",
               "RelativeDocumentMoniker": "RastaurantPosMAUI\\Pages\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Pages\\MainPage.xaml",
-              "RelativeToolTip": "RastaurantPosMAUI\\Pages\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAABbAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Pages\\MainPage.xaml*",
+              "RelativeToolTip": "RastaurantPosMAUI\\Pages\\MainPage.xaml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-19T15:11:27.481Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "RastaurantPosMAUI\\Data\\SeedData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T12:22:06.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T12:22:06.771Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "RastaurantPosMAUI\\Data\\DatabaseService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T12:00:59.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T12:00:59.573Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "RastaurantPosMAUI\\ViewModels\\HomeViewModel.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAAEMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T12:00:57.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T12:00:57.719Z"
             }
           ]
         }
