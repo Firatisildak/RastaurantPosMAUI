@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:RastaurantPosMAUI.ViewModels"
              xmlns:data="clr-namespace:RastaurantPosMAUI.Data"
              xmlns:models="clr-namespace:RastaurantPosMAUI.Models"
+             xmlns:controls="clr-namespace:RastaurantPosMAUI.Controls"
              x:Class="RastaurantPosMAUI.Pages.MainPage"
              x:DataType="vm:HomeViewModel"
              Shell.NavBarIsVisible="False">
@@ -11,8 +12,8 @@
     <Grid ColumnDefinitions=".75*, .25*">
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" RowSpacing="15" Padding="15">
             <Label Grid.Row="0"
-                   Text="Hello, Fırat IŞILDAK" 
-                   FontAttributes="Bold" 
+                   Text="Hello, Fırat IŞILDAK"
+                   FontAttributes="Bold"  
                    FontSize="22"/>
             <CollectionView Grid.Row="1" ItemsSource="{Binding Categories}">
                 <CollectionView.ItemsLayout>
@@ -108,7 +109,10 @@
             </Grid>
         </Grid>
         <Grid Grid.Column="1" BackgroundColor="{StaticResource LightWheat}">
-            <Label Text="Current Order Items"/>
+            <VerticalStackLayout>
+                <Label Text="Current Order Items"/>
+                <controls:CurrentDateTimeControl/>
+            </VerticalStackLayout>
         </Grid>
     </Grid>
 
