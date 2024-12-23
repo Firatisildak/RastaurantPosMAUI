@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\controls\\currentdatetimecontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\controls\\currentdatetimecontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\pages\\managemenuitempage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\pages\\managemenuitempage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\controls\\currentdatetimecontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\controls\\currentdatetimecontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\models\\menucategorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\models\\menucategorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\controls\\currentdatetimecontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\controls\\currentdatetimecontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\data\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\data\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\models\\cartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\models\\cartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|c:\\users\\geotek\\source\\repos\\rastaurantposmaui\\rastaurantposmaui\\data\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E62DEE12-BA3F-408F-8314-B1950CE0C38C}|RastaurantPosMAUI\\RastaurantPosMAUI.csproj|solutionrelative:rastaurantposmaui\\data\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,93 +34,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 179,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ManageMenuItemPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Pages\\ManageMenuItemPage.xaml",
-              "RelativeDocumentMoniker": "RastaurantPosMAUI\\Pages\\ManageMenuItemPage.xaml",
-              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Pages\\ManageMenuItemPage.xaml",
-              "RelativeToolTip": "RastaurantPosMAUI\\Pages\\ManageMenuItemPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-20T14:43:15.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CurrentDateTimeControl.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml.cs",
               "RelativeDocumentMoniker": "RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml.cs",
               "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml.cs",
               "RelativeToolTip": "RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:13:56.998Z",
+              "WhenOpened": "2024-12-23T06:59:58.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CurrentDateTimeControl.xaml",
-              "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml",
-              "RelativeDocumentMoniker": "RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml",
-              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml",
-              "RelativeToolTip": "RastaurantPosMAUI\\controls\\CurrentDateTimeControl.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-20T14:10:03.65Z",
+              "DocumentIndex": 5,
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Data\\MenuItem.cs",
+              "RelativeDocumentMoniker": "RastaurantPosMAUI\\Data\\MenuItem.cs",
+              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Data\\MenuItem.cs",
+              "RelativeToolTip": "RastaurantPosMAUI\\Data\\MenuItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:58:39.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartModel.cs",
+              "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Models\\CartModel.cs",
+              "RelativeDocumentMoniker": "RastaurantPosMAUI\\Models\\CartModel.cs",
+              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Models\\CartModel.cs",
+              "RelativeToolTip": "RastaurantPosMAUI\\Models\\CartModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:57:28.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuCategoryModel.cs",
+              "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Models\\MenuCategoryModel.cs",
+              "RelativeDocumentMoniker": "RastaurantPosMAUI\\Models\\MenuCategoryModel.cs",
+              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Models\\MenuCategoryModel.cs",
+              "RelativeToolTip": "RastaurantPosMAUI\\Models\\MenuCategoryModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:57:24.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Pages\\MainPage.xaml",
               "RelativeDocumentMoniker": "RastaurantPosMAUI\\Pages\\MainPage.xaml",
               "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Pages\\MainPage.xaml",
               "RelativeToolTip": "RastaurantPosMAUI\\Pages\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAKIAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-19T15:11:27.481Z",
+              "WhenOpened": "2024-12-23T06:36:05.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Data\\SeedData.cs",
-              "RelativeDocumentMoniker": "RastaurantPosMAUI\\Data\\SeedData.cs",
-              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Data\\SeedData.cs",
-              "RelativeToolTip": "RastaurantPosMAUI\\Data\\SeedData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T12:22:06.771Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DatabaseService.cs",
-              "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Data\\DatabaseService.cs",
-              "RelativeDocumentMoniker": "RastaurantPosMAUI\\Data\\DatabaseService.cs",
-              "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\Data\\DatabaseService.cs",
-              "RelativeToolTip": "RastaurantPosMAUI\\Data\\DatabaseService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T12:00:59.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "HomeViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\ViewModels\\HomeViewModel.cs",
               "RelativeDocumentMoniker": "RastaurantPosMAUI\\ViewModels\\HomeViewModel.cs",
               "ToolTip": "C:\\Users\\Geotek\\source\\repos\\RastaurantPosMAUI\\RastaurantPosMAUI\\ViewModels\\HomeViewModel.cs",
               "RelativeToolTip": "RastaurantPosMAUI\\ViewModels\\HomeViewModel.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEMAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAGsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T12:00:57.719Z"
             }

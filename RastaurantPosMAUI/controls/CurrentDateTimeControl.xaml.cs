@@ -17,7 +17,7 @@ public partial class CurrentDateTimeControl : ContentView, IDisposable
 	{
 		while(await _timer.WaitForNextTickAsync())
 		{
-			dayTimeLabel.Text = DateTime.Now.ToString("dddd, hh:mm:ss tt");
+            dayTimeLabel.Text = DateTime.Now.ToString("dddd, hh:mm:ss tt");
 			dateLabel.Text = DateTime.Now.ToString("MMM dd, yyyy");
 		}
 	}

@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
+using System.Collections.ObjectModel;
 using MenuItem = RastaurantPosMAUI.Data.MenuItem;
 
 namespace RastaurantPosMAUI.ViewModels
@@ -18,6 +19,8 @@ namespace RastaurantPosMAUI.ViewModels
 
         [ObservableProperty]
         private MenuCategoryModel? _selectedCategory = null;
+
+        public ObservableCollection<CartModel> CartItems { get; set; } = new();
 
         [ObservableProperty]
         private bool _isLoading;
@@ -64,12 +67,52 @@ namespace RastaurantPosMAUI.ViewModels
             var newlySelectedCategory = Categories.First(c => c.Id == categoryId);
             newlySelectedCategory.IsSelected = true;
 
-            SelectedCategory= newlySelectedCategory;
-           
+            SelectedCategory = newlySelectedCategory;
+
             MenuItems = await _databaseService.GetMenuItemsByCategoryAsync(SelectedCategory.Id);
 
             IsLoading = false;
         }
 
+        [RelayCommand]
+        private void AddToCart(MenuItem menuItem)
+        {
+            var cartItem = CartItems.FirstOrDefault(c => c.ItemId == menuItem.Id);
+            if (cartItem == null)
+            {
+                //Item does not exist in the cart
+                //Add item to Cart
+                cartItem = new CartModel
+                {
+                    ItemId = menuItem.Id,
+                    Icon = menuItem.Icon,
+                    Name = menuItem.Name,
+                    Price = menuItem.Price,
+                    Quantity = 1
+                };
+
+                CartItems.Add(cartItem);
+            }
+            else 
+            {
+                //This item exists in cart
+                //Increase the quantity for this item in the cart
+                cartItem.Quantity++;
+            }
+        }
+
+        [RelayCommand]
+        private void IncreaseQuantity(CartModel cartItem) =>cartItem.Quantity++;
+
+        [RelayCommand]
+        private void DecreaseQuantity(CartModel cartItem)
+        {
+            cartItem.Quantity--;
+            if (cartItem.Quantity == 0)
+                CartItems.Remove(cartItem);
+        }
+
+        [RelayCommand]
+        private void RemoveItemFromCart(CartModel cartItem)=>CartItems.Remove(cartItem);
     }
 }
