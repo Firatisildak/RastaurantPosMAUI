@@ -11,7 +11,7 @@ namespace RastaurantPosMAUI.ViewModels
     public partial class HomeViewModel : ObservableObject
     {
         private readonly DatabaseService _databaseService;
-
+        private readonly OrdersViewModel _ordersViewModel;
         [ObservableProperty]
         private MenuCategoryModel[] _categories = [];
 
@@ -40,9 +40,10 @@ namespace RastaurantPosMAUI.ViewModels
 
         public decimal Total => Subtotal + TaxAmount;
 
-        public HomeViewModel(DatabaseService databaseService)
+        public HomeViewModel(DatabaseService databaseService, OrdersViewModel ordersViewModel)
         {
             _databaseService = databaseService;
+            _ordersViewModel = ordersViewModel;
             CartItems.CollectionChanged += CartItems_CollectionChanged;
         }
 
@@ -181,6 +182,18 @@ namespace RastaurantPosMAUI.ViewModels
                 }
                 TaxPercentage = enteredTaxPercentage;
             }        
+        }
+
+        [RelayCommand]
+        private async Task PlaceOrderAsync(bool isPaidOnline)
+        {
+            IsLoading = true;
+            if(await _ordersViewModel.PlaceOrderAsync([.. CartItems], isPaidOnline)){
+                //Order creating successfull
+                //clear the cart items
+                CartItems.Clear();
+            }
+            IsLoading = false;
         }
     }
 }
