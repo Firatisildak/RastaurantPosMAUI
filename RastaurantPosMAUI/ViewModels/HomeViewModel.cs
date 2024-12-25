@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using MenuItem = RastaurantPosMAUI.Data.MenuItem;
 
 namespace RastaurantPosMAUI.ViewModels
@@ -25,9 +26,33 @@ namespace RastaurantPosMAUI.ViewModels
         [ObservableProperty]
         private bool _isLoading;
 
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(TaxAmount))]
+        [NotifyPropertyChangedFor(nameof(Total))]
+        private decimal _subtotal;
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(TaxAmount))]
+        [NotifyPropertyChangedFor(nameof(Total))]
+        private int _taxPercentage;
+
+        public decimal TaxAmount => (Subtotal * TaxPercentage)/100;
+
+        public decimal Total => Subtotal + TaxAmount;
+
         public HomeViewModel(DatabaseService databaseService)
         {
             _databaseService = databaseService;
+            CartItems.CollectionChanged += CartItems_CollectionChanged;
+        }
+
+        private void CartItems_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            //It will be executed whenevr
+            //we are adding any item to the cart
+            //removing item from the cart
+            //or clearing the cart
+            RecalculateAmounts();
         }
 
         private bool _isIntialized;
@@ -98,11 +123,16 @@ namespace RastaurantPosMAUI.ViewModels
                 //This item exists in cart
                 //Increase the quantity for this item in the cart
                 cartItem.Quantity++;
+                RecalculateAmounts();
             }
         }
 
         [RelayCommand]
-        private void IncreaseQuantity(CartModel cartItem) =>cartItem.Quantity++;
+        private void IncreaseQuantity(CartModel cartItem)
+        {
+            cartItem.Quantity++;
+            RecalculateAmounts();
+        }
 
         [RelayCommand]
         private void DecreaseQuantity(CartModel cartItem)
@@ -110,9 +140,47 @@ namespace RastaurantPosMAUI.ViewModels
             cartItem.Quantity--;
             if (cartItem.Quantity == 0)
                 CartItems.Remove(cartItem);
+            else
+                RecalculateAmounts();
         }
 
         [RelayCommand]
-        private void RemoveItemFromCart(CartModel cartItem)=>CartItems.Remove(cartItem);
+        private void RemoveItemFromCart(CartModel cartItem)=> CartItems.Remove(cartItem);
+
+        [RelayCommand]
+        private async Task ClearCartAsync()
+        {
+            if(await Shell.Current.DisplayAlert("Clear Cart", "Do you really want to clear the cart", "Yes", "No"))
+            {
+                CartItems.Clear();
+            }
+        }
+
+        private void RecalculateAmounts()
+        {
+            Subtotal=CartItems.Sum(c => c.Amount);
+        }
+
+        [RelayCommand]
+        private async Task TaxPercentageClickAsync()
+        {
+            var result = await Shell.Current.DisplayPromptAsync("Tax Percentage", "Enter the applicable tax percentage", placeholder: "10", initialValue: TaxPercentage.ToString());
+            if (!string.IsNullOrWhiteSpace(result)) 
+            {
+                if(!int.TryParse(result, out int enteredTaxPercentage))
+                {
+                    await Shell.Current.DisplayAlert("Invalid Value", "Entered tax percentage is valid", "Ok");
+                    return;
+                }
+
+                //it was a valid numeric value
+                if (enteredTaxPercentage > 100) 
+                {
+                    await Shell.Current.DisplayAlert("Invalid Value", "Tax percentage cannot be more than 100", "Ok");
+                    return;
+                }
+                TaxPercentage = enteredTaxPercentage;
+            }        
+        }
     }
 }

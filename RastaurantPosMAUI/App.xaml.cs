@@ -13,5 +13,14 @@ namespace RastaurantPosMAUI
 
             Task.Run(async() => await databaseService.InitializeDatabaseAsync()).GetAwaiter().GetResult();
         }
+
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            var window = base.CreateWindow(activationState);
+
+            window.Height = window.MinimumHeight = 760;
+            window.Width = window.MinimumWidth = 1280;
+            return window;
+        }
     }
 }
