@@ -25,7 +25,8 @@ namespace RastaurantPosMAUI
             builder.Services.AddSingleton<DatabaseService>()
             .AddSingleton<HomeViewModel>()
                 .AddSingleton<MainPage>()
-                .AddSingleton<OrdersViewModel>();
+                .AddSingleton<OrdersViewModel>()
+                .AddSingleton<OrdersPage>();
 
             return builder.Build();
         }

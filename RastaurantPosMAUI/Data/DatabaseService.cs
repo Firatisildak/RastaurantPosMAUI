@@ -96,6 +96,9 @@ namespace RastaurantPosMAUI.Data
             return null;
         }
 
+        public async Task<Order[]> GetOrdersAsync()=>
+            await _connection.Table<Order>().ToArrayAsync();
+
         public async ValueTask DisposeAsync()
         {
             if (_connection != null)
