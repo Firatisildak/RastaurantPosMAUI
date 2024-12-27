@@ -1,8 +1,9 @@
-﻿using RastaurantPosMAUI.Data;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using RastaurantPosMAUI.Data;
 
 namespace RastaurantPosMAUI.Models
 {
-    public class OrderModel
+    public partial class OrderModel : ObservableObject
     {
         public long Id { get; set; }
         public DateTime? OrderDate { get; set; }
@@ -10,5 +11,8 @@ namespace RastaurantPosMAUI.Models
         public decimal TotalAmountPaid { get; set; }
         public string? PaymentMode { get; set; }
         public OrderItem[] Items { get; set; }
+
+        [ObservableProperty]
+        private bool _isSelected;
     }
 }

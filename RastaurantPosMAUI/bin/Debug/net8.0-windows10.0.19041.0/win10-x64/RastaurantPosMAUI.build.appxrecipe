@@ -226,6 +226,9 @@
     <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cupcake.scale-100.png">
       <PackagePath>cupcake.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cylinder.scale-100.png">
+      <PackagePath>cylinder.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\donut.scale-100.png">
       <PackagePath>donut.scale-100.png</PackagePath>
     </AppxPackagedFile>

@@ -10,7 +10,7 @@ public partial class OrdersPage : ContentPage
 	{
 		InitializeComponent();
         _ordersViewModel = ordersViewModel;
-        BindingContext=ordersViewModel;
+        BindingContext=_ordersViewModel;
         InitializeViewModelAsync();
     }
 
