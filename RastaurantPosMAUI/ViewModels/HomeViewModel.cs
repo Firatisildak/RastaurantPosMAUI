@@ -80,7 +80,7 @@ namespace RastaurantPosMAUI.ViewModels
         }
 
         [RelayCommand]
-        private async Task SelectCategory(int categoryId)
+        private async Task SelectCategoryAsync(int categoryId)
         {
             if (SelectedCategory.Id == categoryId)
                 return;

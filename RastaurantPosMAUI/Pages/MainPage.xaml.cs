@@ -1,4 +1,5 @@
 ﻿using RastaurantPosMAUI.ViewModels;
+using MenuItem = RastaurantPosMAUI.Data.MenuItem;
 
 namespace RastaurantPosMAUI.Pages;
 
@@ -19,4 +20,13 @@ public partial class MainPage : ContentPage
         await _homeViewModel.InitializeAsync();
     }
 
+    private async void CategoriesListControl_OnCategorySelected(Models.MenuCategoryModel category)
+    {
+        await _homeViewModel.SelectCategoryCommand.ExecuteAsync(category.Id);
+    }
+
+    private void MenuItemsListControl_OnSelectItem(MenuItem menuItem)
+    {
+        _homeViewModel.AddToCartCommand.Execute(menuItem);
+    }
 }

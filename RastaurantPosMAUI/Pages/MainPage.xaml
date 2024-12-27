@@ -22,7 +22,11 @@
                    Text="Hello, Fırat IŞILDAK"
                    FontAttributes="Bold"  
                    FontSize="22"/>
-            <CollectionView Grid.Row="1" ItemsSource="{Binding Categories}">
+            <controls:CategoriesListControl
+                Grid.Row="1"
+                Categories="{Binding Categories}"
+                OnCategorySelected="CategoriesListControl_OnCategorySelected"/>
+            <!--<CollectionView Grid.Row="1" ItemsSource="{Binding Categories}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
@@ -61,10 +65,13 @@
                         </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-            </CollectionView>
+            </CollectionView>-->
 
             <Grid Grid.Row="2">
-                <CollectionView ItemsSource="{Binding MenuItems}">
+
+                <controls:MenuItemsListControl Items="{Binding MenuItems}" OnSelectItem="MenuItemsListControl_OnSelectItem"/>
+
+                <!--<CollectionView ItemsSource="{Binding MenuItems}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout HorizontalItemSpacing="10" VerticalItemSpacing="10" Orientation="Vertical" Span="4"/>
                     </CollectionView.ItemsLayout>
@@ -105,14 +112,15 @@
                             </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
-                </CollectionView>
+                </CollectionView>-->
                 <BoxView
                     HorizontalOptions="Fill"
                     IsVisible="{Binding IsLoading}"
                     Opacity="0.5"
                     VerticalOptions="Fill"
                     Color="{StaticResource LightWheat}"/>
-                <ActivityIndicator IsRunning="{Binding IsLoading}"
+                <ActivityIndicator 
+                    IsRunning="{Binding IsLoading}"
                     HeightRequest="25"
                     WidthRequest="25"
                     HorizontalOptions="Center"

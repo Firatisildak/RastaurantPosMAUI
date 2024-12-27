@@ -3,12 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RastaurantPosMAUI.ViewModels
 {
@@ -16,7 +11,7 @@ namespace RastaurantPosMAUI.ViewModels
     {
         private readonly DatabaseService _databaseService;
 
-        public OrdersViewModel(DatabaseService databaseService) 
+        public OrdersViewModel(DatabaseService databaseService)
         {
             _databaseService = databaseService;
         }
@@ -44,8 +39,8 @@ namespace RastaurantPosMAUI.ViewModels
                 Items = orderItems
             };
 
-            var errorMessage=await _databaseService.PlaceOrderAsync(orderModel);
-            if (!string.IsNullOrEmpty(errorMessage)) 
+            var errorMessage = await _databaseService.PlaceOrderAsync(orderModel);
+            if (!string.IsNullOrEmpty(errorMessage))
             {
                 //Order creating failed
                 await Shell.Current.DisplayAlert("Error", errorMessage, "Ok");
@@ -64,10 +59,10 @@ namespace RastaurantPosMAUI.ViewModels
 
         public async ValueTask InitializeAsync()
         {
-            if(_isInitialized) 
+            if (_isInitialized)
                 return;
             _isInitialized = true;
-            IsLoading= true;
+            IsLoading = true;
             var dbOrders = await _databaseService.GetOrdersAsync();
             var orders = dbOrders.Select(o => new OrderModel
             {
@@ -77,7 +72,7 @@ namespace RastaurantPosMAUI.ViewModels
                 TotalAmountPaid = o.TotalAmountPaid,
                 TotalItemsCount = o.TotalItemsCount,
             });
-            foreach (var order in orders) 
+            foreach (var order in orders)
             {
                 Orders.Add(order);
             }
@@ -90,8 +85,8 @@ namespace RastaurantPosMAUI.ViewModels
         [RelayCommand]
         private async Task SelectOrderAsync(OrderModel? order)
         {
-            var preSelectedOrder = Orders.FirstOrDefault(o=>o.IsSelected);
-            if (preSelectedOrder != null) 
+            var preSelectedOrder = Orders.FirstOrDefault(o => o.IsSelected);
+            if (preSelectedOrder != null)
             {
                 preSelectedOrder.IsSelected = false;
                 if (preSelectedOrder.Id == order?.Id)
@@ -99,12 +94,12 @@ namespace RastaurantPosMAUI.ViewModels
                     OrderItems = [];
                 }
             }
-            if(order == null || order.Id == 0)
+            if (order == null || order.Id == 0)
             {
                 OrderItems = [];
                 return;
             }
-            IsLoading= true;
+            IsLoading = true;
             order.IsSelected = true;
             OrderItems = await _databaseService.GetOrderItemsAsync(order.Id);
             IsLoading = false;

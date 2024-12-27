@@ -1,7 +1,7 @@
 ﻿using RastaurantPosMAUI.Data;
 using MenuItem = RastaurantPosMAUI.Data.MenuItem;
 
-namespace RestaurantPosMAUI.Data;
+namespace RastaurantPosMAUI.Data;
 
 public static class SeedData
 {

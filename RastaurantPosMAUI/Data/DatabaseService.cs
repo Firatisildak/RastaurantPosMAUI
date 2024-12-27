@@ -1,5 +1,5 @@
 ﻿using RastaurantPosMAUI.Models;
-using RestaurantPosMAUI.Data;
+using RastaurantPosMAUI.Data;
 using SQLite;
 namespace RastaurantPosMAUI.Data
 {
