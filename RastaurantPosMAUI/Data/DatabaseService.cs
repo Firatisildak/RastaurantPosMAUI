@@ -102,6 +102,17 @@ namespace RastaurantPosMAUI.Data
             await _connection.Table<OrderItem>().Where(oi => oi.OrderId == orderId).
             ToArrayAsync();
 
+        public async Task<MenuCategory[]> GetCategoriesOfMenuItem(int menuItemId)
+        {
+            var query = @"SELECT cat.*
+                    From MenuCategory cat
+                    INNER JOIN MenuItemCategoryMapping map
+                        ON cat.Id=map.MenuCategoryId
+                    WHERE map.MenuItemId=?";
+            var categories = await _connection.QueryAsync<MenuCategory>(query, menuItemId);
+            return [.. categories];
+        }
+
         public async ValueTask DisposeAsync()
         {
             if (_connection != null)

@@ -52,6 +52,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls
 build_metadata.AdditionalFiles.TargetPath = Controls\MenuItemsListControl.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\MenuItemsListControl.xaml
 
+[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/SaveMenuItemFormControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.SaveMenuItemFormControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\SaveMenuItemFormControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\SaveMenuItemFormControl.xaml
+
 [C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Pages.MainPage.xaml

@@ -295,6 +295,9 @@
     <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\idli_platter.scale-100.png">
       <PackagePath>idli_platter.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\image.scale-100.png">
+      <PackagePath>image.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\kebab.scale-100.png">
       <PackagePath>kebab.scale-100.png</PackagePath>
     </AppxPackagedFile>

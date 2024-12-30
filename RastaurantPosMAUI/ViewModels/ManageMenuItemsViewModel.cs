@@ -32,6 +32,9 @@ namespace RastaurantPosMAUI.ViewModels
         [ObservableProperty]
         private bool _isLoading;
 
+        [ObservableProperty]
+        private MenuItemModel _menuItem = new();
+
         private bool _isIntialized;
 
         public async ValueTask InitializeAsync()
@@ -79,7 +82,33 @@ namespace RastaurantPosMAUI.ViewModels
         [RelayCommand]
         private async Task EditMenuItemAsync(MenuItem menuItem)
         {
-            await Shell.Current.DisplayAlert("Edit", "Edit menu item", "Ok");
+            //await Shell.Current.DisplayAlert("Edit", "Edit menu item", "Ok");
+            var menuItemModel =new MenuItemModel
+            {
+                Description= menuItem.Description,
+                Icon = menuItem.Icon,
+                Id = menuItem.Id,
+                Name= menuItem.Name,
+                Price= menuItem.Price
+            };
+
+            var itemCategories = await _databaseService.GetCategoriesOfMenuItem(menuItem.Id);
+            foreach (var category in Categories) 
+            {
+                var categoryOfItem = new MenuCategoryModel
+                {
+                    Icon = category.Icon,
+                    Id = category.Id,
+                    Name = category.Name
+                };
+                if(itemCategories.Any(c=> c.Id == category.Id))
+                    categoryOfItem.IsSelected = true;
+                else 
+                    categoryOfItem.IsSelected = false;
+                menuItemModel.Categories.Add(categoryOfItem);
+            }
+
+            MenuItem = menuItemModel;
         }
     }
 }

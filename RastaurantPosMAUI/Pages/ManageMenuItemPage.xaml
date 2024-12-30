@@ -49,8 +49,8 @@
                 <controls:CurrentDateTimeControl/>
             </VerticalStackLayout>
 
-            <Grid Padding="10" Grid.Row="1" BackgroundColor="Wheat">
-                <!--Save Menu Item Form-->
+            <Grid Padding="10" Grid.Row="1" BackgroundColor="{StaticResource LightWheat}">
+                <controls:SaveMenuItemFormControl Item="{Binding MenuItem}" />
             </Grid>
         </Grid>
     </Grid>
