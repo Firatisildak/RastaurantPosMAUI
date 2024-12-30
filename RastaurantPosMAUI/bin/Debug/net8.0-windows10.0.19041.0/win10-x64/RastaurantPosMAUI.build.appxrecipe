@@ -250,6 +250,9 @@
     <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\drink.scale-100.png">
       <PackagePath>drink.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\edit.scale-100.png">
+      <PackagePath>edit.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\energy_drink.scale-100.png">
       <PackagePath>energy_drink.scale-100.png</PackagePath>
     </AppxPackagedFile>

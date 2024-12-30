@@ -37,7 +37,7 @@
                             CornerRadius="8"
                             HeightRequest="25"
                             WidthRequest="25" 
-                            Source="shoping.png"
+                            Source="{Binding Source={x:Reference this}, Path=ActionIcon}"
                             Command="{Binding Source={x:RelativeSource AncestorType={x:Type controls:MenuItemsListControl}}, Path=SelectItemCommand}"
                             CommandParameter="{Binding .}"/>
                         </FlexLayout>

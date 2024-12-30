@@ -21,6 +21,13 @@ public partial class MenuItemsListControl : ContentView
 		set => SetValue(ItemsProperty, value); 
 	}
 
-	[RelayCommand]
+	public string ActionIcon { get; set; } = "shoping.png";
+
+	public bool IsEditCase
+	{
+		set => ActionIcon = (value ? "edit.png" : "shoping.png");
+	}
+
+    [RelayCommand]
 	private void SelectItem(MenuItem item) => OnSelectItem?.Invoke(item);
 }

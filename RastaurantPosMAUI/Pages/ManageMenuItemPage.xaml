@@ -2,13 +2,56 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RastaurantPosMAUI.Pages.ManageMenuItemPage"
-              xmlns:controls="clr-namespace:RastaurantPosMAUI.Controls"
-             Title="ManageMenuItemPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <controls:CurrentDateTimeControl/>
-    </VerticalStackLayout>
+             xmlns:controls="clr-namespace:RastaurantPosMAUI.Controls"
+             xmlns:vm="clr-namespace:RastaurantPosMAUI.ViewModels"
+             xmlns:data="clr-namespace:RastaurantPosMAUI.Data"
+             xmlns:models="clr-namespace:RastaurantPosMAUI.Models"
+             Shell.NavBarIsVisible="False"
+             x:DataType="vm:ManageMenuItemsViewModel">
+    
+    <Grid ColumnDefinitions=".75*, .25*">
+        <Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" RowSpacing="15" Padding="15">
+            <Label Grid.Row="0"
+               Text="Manege Menu Items"
+               FontAttributes="Bold"  
+               FontSize="22"/>
+            <controls:CategoriesListControl
+                Grid.Row="1"
+                Categories="{Binding Categories}"
+                OnCategorySelected="CategoriesListControl_OnCategorySelected"/>
+
+            <Grid Grid.Row="2">
+
+                <controls:MenuItemsListControl
+                    Items="{Binding MenuItems}"
+                    IsEditCase="True"
+                    OnSelectItem="MenuItemsListControl_OnSelectItem"/>
+                <BoxView
+                    HorizontalOptions="Fill"
+                    IsVisible="{Binding IsLoading}"
+                    Opacity="0.5"
+                    VerticalOptions="Fill"
+                    Color="{StaticResource LightWheat}"/>
+                <ActivityIndicator 
+                    IsRunning="{Binding IsLoading}"
+                    HeightRequest="25"
+                    WidthRequest="25"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Color="Maroon"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1"
+          BackgroundColor="{StaticResource LightWheat}"
+          RowDefinitions="Auto, *" Padding="0, 10">
+            <VerticalStackLayout Grid.Row="0" Spacing="5" Padding="10, 0">
+                <Label Text="Save Menu Item" FontSize="25" FontAttributes="Bold"/>
+                <controls:CurrentDateTimeControl/>
+            </VerticalStackLayout>
+
+            <Grid Padding="10" Grid.Row="1" BackgroundColor="Wheat">
+                <!--Save Menu Item Form-->
+            </Grid>
+        </Grid>
+    </Grid>
 </ContentPage>
