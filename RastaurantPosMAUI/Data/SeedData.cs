@@ -1,7 +1,4 @@
-﻿using RastaurantPosMAUI.Data;
-using MenuItem = RastaurantPosMAUI.Data.MenuItem;
-
-namespace RastaurantPosMAUI.Data;
+﻿namespace RastaurantPosMAUI.Data;
 
 public static class SeedData
 {

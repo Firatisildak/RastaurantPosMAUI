@@ -69,7 +69,9 @@
 
             <Grid Grid.Row="2">
 
-                <controls:MenuItemsListControl Items="{Binding MenuItems}" OnSelectItem="MenuItemsListControl_OnSelectItem"/>
+                <controls:MenuItemsListControl
+                    Items="{Binding MenuItems}"
+                    OnSelectItem="MenuItemsListControl_OnSelectItem"/>
 
                 <!--<CollectionView ItemsSource="{Binding MenuItems}">
                     <CollectionView.ItemsLayout>

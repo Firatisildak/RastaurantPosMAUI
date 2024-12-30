@@ -1,5 +1,4 @@
 ﻿using RastaurantPosMAUI.Models;
-using RastaurantPosMAUI.Data;
 using SQLite;
 namespace RastaurantPosMAUI.Data
 {
@@ -61,26 +60,26 @@ namespace RastaurantPosMAUI.Data
         /// <param name="model"></param>
         /// <returns>Returns Error Message or null(if the operation was successfull)</returns>
 
-        public  async Task<string?> PlaceOrderAsync(OrderModel model)
+        public async Task<string?> PlaceOrderAsync(OrderModel model)
         {
             var order = new Order
             {
-                OrderDate=model.OrderDate,
-                PaymentMode= model.PaymentMode,
-                TotalAmountPaid=model.TotalAmountPaid,
-                TotalItemsCount=model.TotalItemsCount,
+                OrderDate = model.OrderDate,
+                PaymentMode = model.PaymentMode,
+                TotalAmountPaid = model.TotalAmountPaid,
+                TotalItemsCount = model.TotalItemsCount,
             };
 
-            if(await _connection.InsertAsync(order) > 0)
+            if (await _connection.InsertAsync(order) > 0)
             {
                 //Order Inserted succesfully
                 //now we have newly inserted order id in order.Id
                 //We can add the orderId to the OrderItems and Insert OrderItems in the database
-                foreach( var item in model.Items)
+                foreach (var item in model.Items)
                 {
-                    item.OrderId=order.Id;
+                    item.OrderId = order.Id;
                 }
-                if(await _connection.InsertAllAsync(model.Items) == 0)
+                if (await _connection.InsertAllAsync(model.Items) == 0)
                 {
                     //OrderItems insert operation failed
                     //Remove the Newly Inserted Order in this method
@@ -92,15 +91,15 @@ namespace RastaurantPosMAUI.Data
             {
                 return "Error in inserting order order";
             }
-            model.Id= order.Id;
+            model.Id = order.Id;
             return null;
         }
 
-        public async Task<Order[]> GetOrdersAsync()=>
+        public async Task<Order[]> GetOrdersAsync() =>
             await _connection.Table<Order>().ToArrayAsync();
 
-        public async Task<OrderItem[]> GetOrderItemsAsync(long orderId)=>
-            await _connection.Table<OrderItem>().Where(oi=>oi.OrderId== orderId).
+        public async Task<OrderItem[]> GetOrderItemsAsync(long orderId) =>
+            await _connection.Table<OrderItem>().Where(oi => oi.OrderId == orderId).
             ToArrayAsync();
 
         public async ValueTask DisposeAsync()
