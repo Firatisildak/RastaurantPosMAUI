@@ -55,7 +55,25 @@ namespace RastaurantPosMAUI.ViewModels
 
             MenuItems = await _databaseService.GetMenuItemsByCategoryAsync(SelectedCategory.Id);
 
+            SetEmptyCategoriesToItem();
+
             IsLoading = false;
+        }
+
+        private void SetEmptyCategoriesToItem()
+        {
+            MenuItem.Categories.Clear();
+            foreach (var category in Categories)
+            {
+                var categoryOfItem = new MenuCategoryModel
+                {
+                    Id = category.Id,
+                    Icon = category.Icon,
+                    Name = category.Name,
+                    IsSelected = false
+                };
+                MenuItem.Categories.Add(categoryOfItem);
+            }
         }
 
         [RelayCommand]
@@ -109,6 +127,13 @@ namespace RastaurantPosMAUI.ViewModels
             }
 
             MenuItem = menuItemModel;
+        }
+
+        [RelayCommand]
+        private void Cancel()
+        {
+            MenuItem = new();
+            SetEmptyCategoriesToItem();
         }
     }
 }

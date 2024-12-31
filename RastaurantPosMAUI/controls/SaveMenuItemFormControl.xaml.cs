@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.Input;
 using RastaurantPosMAUI.Models;
 
 namespace RastaurantPosMAUI.Controls;
@@ -19,7 +20,7 @@ public partial class SaveMenuItemFormControl : ContentView
     //}
 
     public static readonly BindableProperty ItemProperty =
-       BindableProperty.Create(nameof(Item), typeof(MenuItemModel), typeof(SaveMenuItemFormControl), new MenuItemModel());
+       BindableProperty.Create(nameof(Item), typeof(MenuItemModel), typeof(SaveMenuItemFormControl), new MenuItemModel(), propertyChanged: OnItemChanged);
 
     public MenuItemModel Item
     {
@@ -27,7 +28,32 @@ public partial class SaveMenuItemFormControl : ContentView
         set => SetValue(ItemProperty, value);
     }
 
+    private static void OnItemChanged(BindableObject bindable, object oldValue, object newValue)
+    {
+        if (newValue is MenuItemModel menuItemModel)
+        {
+            if (bindable is SaveMenuItemFormControl thisControl)
+            {
+                if (menuItemModel.Id > 0)
+                {
+                    thisControl.itemIcon.Source = menuItemModel.Icon;
+                    thisControl.itemIcon.HeightRequest = thisControl.itemIcon.WidthRequest = 100;
+                }
+                else
+                {
+                    thisControl.itemIcon.Source = "image.png";
+                    thisControl.itemIcon.HeightRequest = thisControl.itemIcon.WidthRequest = 36;
+                }
+            }
+        }
+    }
 
-    private void ToggleCategorySelection(MenuCategoryModel category)=>
+    [RelayCommand]
+    private void ToggleCategorySelection(MenuCategoryModel category) =>
         category.IsSelected = !category.IsSelected;
+
+    public event Action? OnCancel;
+
+    [RelayCommand]
+    private void Cancel() => OnCancel?.Invoke();
 }

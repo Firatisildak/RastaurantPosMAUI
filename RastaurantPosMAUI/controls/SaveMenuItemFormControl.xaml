@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RastaurantPosMAUI.Controls.SaveMenuItemFormControl"
              xmlns:models="clr-namespace:RastaurantPosMAUI.Models"
+             xmlns:controls="clr-namespace:RastaurantPosMAUI.Controls"
              x:Name="this">
     <ContentView.Resources>
         <ResourceDictionary>
@@ -30,7 +31,8 @@
                         StrokeThickness="0"
                         VerticalOptions="Center"
                         WidthRequest="100">
-                    <Image Aspect="AspectFit"
+                    <Image  x:Name="itemIcon"
+                            Aspect="AspectFit"
                             HeightRequest="36"
                             HorizontalOptions="Center"
                             Source="image.png"
@@ -79,6 +81,10 @@
                                         <Setter Property="BackgroundColor" Value="Maroon"/>
                                     </DataTrigger>
                                 </Border.Triggers>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type controls:SaveMenuItemFormControl}}, Path=ToggleCategorySelectionCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                </Border.GestureRecognizers>
                             </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -88,6 +94,7 @@
                 <Button Grid.Column="0"
                         BackgroundColor="Red"
                         Text="Cancel"
+                        Command="{Binding CancelCommand}"
                         HorizontalOptions="Start"/>
                 <Button Grid.Column="1"
                         BackgroundColor="DarkOliveGreen"

@@ -50,7 +50,7 @@
             </VerticalStackLayout>
 
             <Grid Padding="10" Grid.Row="1" BackgroundColor="{StaticResource LightWheat}">
-                <controls:SaveMenuItemFormControl Item="{Binding MenuItem}" />
+                <controls:SaveMenuItemFormControl Item="{Binding MenuItem}" OnCancel="SaveMenuItemFormControl_OnCancel" />
             </Grid>
         </Grid>
     </Grid>
