@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RastaurantPosMAUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+37322fc1e67b59ee9d3ca7d908f80fb90c08735c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+78f71e4eda7f11b4e051fa079d7e955445b91fe2")]
 [assembly: System.Reflection.AssemblyProductAttribute("RastaurantPosMAUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RastaurantPosMAUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -42,6 +42,7 @@
                 <Button BackgroundColor="DarkOliveGreen"
                         HorizontalOptions="Center"
                         Text="Pick Image"
+                        Clicked="PickImageButton_Clicked"
                         MinimumHeightRequest="30"
                         Margin="0, 5, 0, 0"/>
             </VerticalStackLayout>
@@ -97,6 +98,7 @@
                         Command="{Binding CancelCommand}"
                         HorizontalOptions="Start"/>
                 <Button Grid.Column="1"
+                        Command="{Binding SaveMenuItemCommand}"
                         BackgroundColor="DarkOliveGreen"
                         Text="Save"/>
             </Grid>

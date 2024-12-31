@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
@@ -134,6 +135,27 @@ namespace RastaurantPosMAUI.ViewModels
         {
             MenuItem = new();
             SetEmptyCategoriesToItem();
+        }
+
+        [RelayCommand]
+        private async Task SaveMenuItemAsync(MenuItemModel model)
+        {
+            IsLoading = true;
+
+            //Save this item to database
+            var errorMessage = await _databaseService.SaveMenuItemAsync(model);
+
+            if (errorMessage != null) 
+            {
+                await Shell.Current.DisplayAlert("Error", errorMessage, "Ok");
+            }
+            else
+            {
+                await Toast.Make("Menu item saved successfully").Show();
+                Cancel();
+            }
+
+            IsLoading = false;
         }
     }
 }

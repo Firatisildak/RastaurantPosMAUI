@@ -113,6 +113,96 @@ namespace RastaurantPosMAUI.Data
             return [.. categories];
         }
 
+        public async Task<string?> SaveMenuItemAsync(MenuItemModel model)
+        {
+            if (model.Id == 0)
+            {
+                //Creating a new menu item
+
+                MenuItem menuItem = new()
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    Description = model.Description,
+                    Icon = model.Icon,
+                    Price = model.Price
+                };
+
+                if (await _connection.InsertAsync(menuItem) > 0)
+                {
+                    var categoryMapping = model.SelectedCategories
+                        .Select(c => new MenuItemCategoryMapping
+                        {
+                            Id = c.Id,
+                            MenuCategoryId = c.Id,
+                            MenuItemId = menuItem.Id
+                        });
+
+                    if (await _connection.InsertAllAsync(categoryMapping) > 0)
+                    {
+                        model.Id = menuItem.Id;
+                        return null;
+                    }
+                    else
+                    {
+                        //Menu Item Insert was Successfull
+                        //but Category mapping Insert operation failed
+                        //we should remove the newly inserted menu item from the database
+                        await _connection.DeleteAsync(menuItem);
+                    }
+                }
+                return "Error in saving menu item";
+            }
+            else
+            {
+                //Updating an existing menu item
+
+                string? errorMessage = null;
+
+                await _connection.RunInTransactionAsync(db =>
+                {
+                    var menuItem = db.Find<MenuItem>(model.Id);
+
+                    menuItem.Name = model.Name;
+                    menuItem.Description = model.Description;
+                    menuItem.Icon = model.Icon;
+                    menuItem.Price = model.Price;
+
+                    if (db.Update(menuItem) == 0)
+                    {
+                        //this operation failed
+                        //return error message
+
+                        errorMessage = "Error in updating menu item";
+                        throw new Exception(); //To trigger rollback
+                    }
+
+                    var deleteQuery = @"
+                            DELETE FROM MenuItemCategoryMapping
+                            WHERE MenuItemId=?";
+                    db.Execute(deleteQuery, menuItem.Id);
+
+                    var categoryMapping = model.SelectedCategories
+                        .Select(c => new MenuItemCategoryMapping
+                        {
+                            Id = c.Id,
+                            MenuCategoryId = c.Id,
+                            MenuItemId = menuItem.Id
+                        });
+                    if (db.InsertAll(categoryMapping) == 0)
+                    {
+                        //this operation failed
+                        //return error message
+
+                        errorMessage = "Error in updating menu item";
+                        throw new Exception(); //To trigger rollback
+                    }
+                });
+
+                return errorMessage;
+            }
+        }
+
         public async ValueTask DisposeAsync()
         {
             if (_connection != null)

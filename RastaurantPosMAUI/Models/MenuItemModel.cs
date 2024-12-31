@@ -20,4 +20,6 @@ public partial class MenuItemModel: ObservableObject
 
     public ObservableCollection<MenuCategoryModel> Categories { get; set; } = [];
 
+    public MenuCategoryModel[] SelectedCategories=>Categories.Where(c=>c.IsSelected).ToArray();
+
 }
