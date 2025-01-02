@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:controls="clr-namespace:RastaurantPosMAUI.Controls"
+               x:Class="RastaurantPosMAUI.Controls.HelpPopup"
+               CanBeDismissedByTappingOutsideOfPopup="False"
+               x:Name="this">
+    <Border BackgroundColor="Wheat"
+            Stroke="Maroon"
+            StrokeShape="RoundRectangle 10">
+        <Border.Shadow>
+            <Shadow/>
+        </Border.Shadow>
+        <VerticalStackLayout>
+            <Grid BackgroundColor="Maroon"
+                  ColumnDefinitions="*, Auto"
+                  Padding="15, 8">
+                <Label Grid.Column="0"
+                       Text="Need help?"
+                       TextColor="White"
+                       FontSize="18"/>
+                <Label Grid.Column="1"
+                       BackgroundColor="Red"
+                       HeightRequest="25"
+                       Text="X"
+                       WidthRequest="25"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="18">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="CloseLabel_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <VerticalStackLayout Spacing="10" Padding="15">
+                <Image Source="phone.png"
+                       HeightRequest="25"
+                       WidthRequest="25"
+                       HorizontalOptions="Center"/>
+                <Label Text="You can connect with us"
+                       HorizontalOptions="Center"
+                       FontSize="16"/>
+                <HorizontalStackLayout Spacing="5">
+                    <Label Text="Email us at"
+                           FontSize="16"
+                           VerticalOptions="Center"/>
+                    <Label Text="{x:Static controls:HelpPopup.Email}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           TextDecorations="Underline"/>
+                    <Label x:Name="copyEmailLable"
+                           Text="Copy to Clipboard"
+                           VerticalOptions="Center"
+                           BackgroundColor="Yellow"
+                           Padding="8, 2">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CopyEmail_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="5">
+                    <Label Text="Call us at"
+                           FontSize="16"
+                           VerticalOptions="Center"/>
+                    <Label Text="{x:Static controls:HelpPopup.Phone}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           TextDecorations="Underline"/>
+                    <Label x:Name="copyPhoneLable"
+                           Text="Copy to Clipboard"
+                           VerticalOptions="Center"
+                           BackgroundColor="Yellow"
+                           Padding="8, 2">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CopyPhone_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <Grid BackgroundColor="Maroon"
+                  ColumnDefinitions="Auto, *"
+                  ColumnSpacing="5"
+                  Padding="15, 5">
+                <Label Grid.Column="0"
+                       Text="Designed &amp; Developed by:"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       FontSize="14"/>
+                <Label Text="Fırat IŞILDAK"
+                       Grid.Column="1"
+                       VerticalOptions="Center"
+                       TextColor="White"
+                       TextDecorations="Underline"
+                       FontSize="15"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Footer_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </VerticalStackLayout>
+    </Border>
+</toolkit:Popup>

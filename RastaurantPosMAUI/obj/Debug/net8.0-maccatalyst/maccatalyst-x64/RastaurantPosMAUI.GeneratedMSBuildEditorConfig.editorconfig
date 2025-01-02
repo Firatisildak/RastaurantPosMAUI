@@ -42,6 +42,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls
 build_metadata.AdditionalFiles.TargetPath = Controls\CurrentDateTimeControl.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\CurrentDateTimeControl.xaml
 
+[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/HelpPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.HelpPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\HelpPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\HelpPopup.xaml
+
 [C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/MenuItemsListControl.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.MenuItemsListControl.xaml

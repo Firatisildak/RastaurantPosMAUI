@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
 using System.Collections.ObjectModel;
@@ -8,7 +9,7 @@ using MenuItem = RastaurantPosMAUI.Data.MenuItem;
 
 namespace RastaurantPosMAUI.ViewModels
 {
-    public partial class HomeViewModel : ObservableObject
+    public partial class HomeViewModel : ObservableObject, IRecipient<MenuItemChangedMessage>
     {
         private readonly DatabaseService _databaseService;
         private readonly OrdersViewModel _ordersViewModel;
@@ -45,6 +46,8 @@ namespace RastaurantPosMAUI.ViewModels
             _databaseService = databaseService;
             _ordersViewModel = ordersViewModel;
             CartItems.CollectionChanged += CartItems_CollectionChanged;
+
+            WeakReferenceMessenger.Default.Register<MenuItemChangedMessage>(this);
         }
 
         private void CartItems_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -194,6 +197,65 @@ namespace RastaurantPosMAUI.ViewModels
                 CartItems.Clear();
             }
             IsLoading = false;
+        }
+
+        public void Receive(MenuItemChangedMessage message)
+        {
+            var model = message.Value;
+            var menuItem = MenuItems.FirstOrDefault(m => m.Id == model.Id);
+            if (menuItem != null)
+            {
+                //This menu item is on the screen the right now
+
+                //check if the the this still has a mapping to selected category
+                if (!model.SelectedCategories.Any(c => c.Id == SelectedCategory.Id))
+                {
+                    //This item no longer belongs to the selected category
+                    //Remove this item from the current UI Menu Items list
+                    MenuItems = [.. MenuItems.Where(m => m.Id == model.Id)];
+                    return;
+                }
+
+                //update the details
+                menuItem.Price = model.Price;
+                menuItem.Description = model.Description;
+                menuItem.Name = model.Name;
+                menuItem.Icon = model.Icon;
+
+                MenuItems = [.. MenuItems];
+            }
+            else if (model.SelectedCategories.Any(c => c.Id == SelectedCategory.Id))
+            {
+                //This item was not on the UI
+                //We updated the item by adding this currently selected category
+                //So add this menu item to the current ui menu items list
+                var newMenuItem = new MenuItem
+                {
+                    Id = model.Id,
+                    Description = model.Description,
+                    Icon = model.Icon,
+                    Name = model.Name,
+                    Price = model.Price
+                };
+
+                MenuItems = [.. MenuItems, newMenuItem];
+            }
+
+            //Check if the updated menu item is added in the cart
+            //if yes, updated the info in the cart
+            var cartItem = CartItems.FirstOrDefault(c=>c.ItemId == model.Id);
+            if (cartItem != null) 
+            {
+                cartItem.Price = model.Price;
+                cartItem.Icon = model.Icon;
+                cartItem.Name = model.Name;
+
+                var itemIndex=CartItems.IndexOf(cartItem);
+
+                //It will trigger CollectionChanged event for replacng this item
+                //Which will recalculate amounts
+                CartItems[itemIndex]= cartItem;
+            }
         }
     }
 }

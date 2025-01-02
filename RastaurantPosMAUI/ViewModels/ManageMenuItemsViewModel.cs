@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
 using System;
@@ -152,10 +153,56 @@ namespace RastaurantPosMAUI.ViewModels
             else
             {
                 await Toast.Make("Menu item saved successfully").Show();
+                HandleMenuItemChanged(model);
+
+                //Send the updated menu item details to the other parts of the app
+                WeakReferenceMessenger.Default.Send(MenuItemChangedMessage.From(model));
                 Cancel();
             }
 
             IsLoading = false;
+        }
+
+        private void HandleMenuItemChanged(MenuItemModel model)
+        {
+            var menuItem= MenuItems.FirstOrDefault(m=> m.Id == model.Id);
+            if (menuItem != null) 
+            {
+                //This menu item is on the screen the right now
+
+                //check if the the this still has a mapping to selected category
+                if (!model.SelectedCategories.Any(c => c.Id == SelectedCategory.Id)) 
+                {
+                    //This item no longer belongs to the selected category
+                    //Remove this item from the current UI Menu Items list
+                    MenuItems = [.. MenuItems.Where(m=>m.Id == model.Id)];
+                    return;
+                }
+
+                //update the details
+                menuItem.Price= model.Price;
+                menuItem.Description= model.Description;
+                menuItem.Name= model.Name;
+                menuItem.Icon= model.Icon;
+
+                MenuItems = [.. MenuItems];
+            }
+            else if (model.SelectedCategories.Any(c => c.Id == SelectedCategory.Id))
+            {
+                //This item was not on the UI
+                //We updated the item by adding this currently selected category
+                //So add this menu item to the current ui menu items list
+                var newMenuItem = new MenuItem
+                {
+                    Id = model.Id,
+                    Description = model.Description,
+                    Icon = model.Icon,
+                    Name = model.Name,
+                    Price = model.Price
+                };
+
+                MenuItems = [.. MenuItems, newMenuItem];
+            }
         }
     }
 }

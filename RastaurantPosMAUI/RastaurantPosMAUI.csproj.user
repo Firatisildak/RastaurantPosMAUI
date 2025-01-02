@@ -12,6 +12,9 @@
     <MauiXaml Update="Controls\CurrentDateTimeControl.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Controls\HelpPopup.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Controls\MenuItemsListControl.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
