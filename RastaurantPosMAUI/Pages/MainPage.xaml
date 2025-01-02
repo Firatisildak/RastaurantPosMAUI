@@ -19,7 +19,7 @@
     <Grid ColumnDefinitions=".75*, .25*">
         <Grid Grid.Column="0" RowDefinitions="Auto, Auto, *" RowSpacing="15" Padding="15">
             <Label Grid.Row="0"
-                   Text="Hello, Fırat IŞILDAK"
+                   Text="{Binding Name, StringFormat='Hello, {0}'}"
                    FontAttributes="Bold"  
                    FontSize="22"/>
             <controls:CategoriesListControl
