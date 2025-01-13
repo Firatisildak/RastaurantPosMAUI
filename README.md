@@ -1,3 +1,8 @@
+![Screenshot 2025-01-13 161714](https://github.com/user-attachments/assets/a7c0b841-7d7c-4f32-b998-8ada82def205)
+![Screenshot 2025-01-13 161701](https://github.com/user-attachments/assets/693109dc-caee-4692-b424-64a409d10c5c)
+![Screenshot 2025-01-13 161635](https://github.com/user-attachments/assets/76633ad5-5661-4f3f-83f3-892e56e628e7)
+![Screenshot 2025-01-13 161613](https://github.com/user-attachments/assets/7fa98c19-340a-4135-a27c-243abd894107)
+
 # Restaurant Management App
 
 ## Project Description
