@@ -75,24 +75,27 @@ _Add screenshots of the app's key features, such as meal browsing, cart manageme
 ```markdown
 RestaurantManagementApp
 ├── Models
-│   ├── Meal.cs
-│   ├── Order.cs
-│   └── CartItem.cs
+│   ├── CartModel.cs
+│   ├── MenuCategoryModel.cs
+│   ├── MenuItemChangedMessage.cs
+│   ├── MenuItemModel.cs
+│   ├── NameChangedMessage.cs
+│   └── OrderModel.cs
 ├── ViewModels
-│   ├── MealViewModel.cs
-│   ├── CartViewModel.cs
-│   └── OrderHistoryViewModel.cs
-├── Views
-│   ├── MealsPage.xaml
-│   ├── CartPage.xaml
-│   └── OrderHistoryPage.xaml
+│   ├── HomeViewModel.cs
+│   ├── ManageMenuItemsViewModel.cs
+│   ├── OrdersViewModel.cs
+│   └── SettingsViewModel.cs
+├── Views(Pages)
+│   ├── MainPage.xaml
+│   ├── ManageMenuItemPage.xaml
+│   └── OrdersPage.xaml
 ├── Data
+│   ├── Entities.cs
 │   ├── AppDbContext.cs
-│   └── DatabaseSeeder.cs
+│   └── SeedData.cs
 ├── Services
-│   ├── MealService.cs
-│   ├── OrderService.cs
-│   └── PaymentService.cs
+│   ├── DatabaseService.cs
 ├── App.xaml
 ├── App.xaml.cs
 └── Program.cs
@@ -108,14 +111,10 @@ Contributions are welcome! To contribute:
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
 For any inquiries, please reach out:
-- Email: your.email@example.com
-- GitHub: [yourusername](https://github.com/yourusername)
+- Email: firatisildak1@gmail.com
 
 Thank you for checking out the Restaurant Management App! 😊
