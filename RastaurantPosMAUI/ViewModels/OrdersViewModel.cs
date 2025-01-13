@@ -2,7 +2,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RastaurantPosMAUI.Data;
+using RastaurantPosMAUI.Data.Entities;
 using RastaurantPosMAUI.Models;
+using RastaurantPosMAUI.Services;
 using System.Collections.ObjectModel;
 
 namespace RastaurantPosMAUI.ViewModels
@@ -61,6 +63,7 @@ namespace RastaurantPosMAUI.ViewModels
         {
             if (_isInitialized)
                 return;
+
             _isInitialized = true;
             IsLoading = true;
             var dbOrders = await _databaseService.GetOrdersAsync();

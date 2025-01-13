@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.Input;
-using MenuItem = RastaurantPosMAUI.Data.MenuItem;
+using MenuItem = RastaurantPosMAUI.Data.Entities.MenuItem;
 
 namespace RastaurantPosMAUI.Controls;
 

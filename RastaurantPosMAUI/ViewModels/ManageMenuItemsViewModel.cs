@@ -4,12 +4,8 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MenuItem = RastaurantPosMAUI.Data.MenuItem;
+using RastaurantPosMAUI.Services;
+using MenuItem = RastaurantPosMAUI.Data.Entities.MenuItem;
 
 namespace RastaurantPosMAUI.ViewModels
 {
@@ -103,17 +99,17 @@ namespace RastaurantPosMAUI.ViewModels
         private async Task EditMenuItemAsync(MenuItem menuItem)
         {
             //await Shell.Current.DisplayAlert("Edit", "Edit menu item", "Ok");
-            var menuItemModel =new MenuItemModel
+            var menuItemModel = new MenuItemModel
             {
-                Description= menuItem.Description,
+                Description = menuItem.Description,
                 Icon = menuItem.Icon,
                 Id = menuItem.Id,
-                Name= menuItem.Name,
-                Price= menuItem.Price
+                Name = menuItem.Name,
+                Price = menuItem.Price
             };
 
             var itemCategories = await _databaseService.GetCategoriesOfMenuItem(menuItem.Id);
-            foreach (var category in Categories) 
+            foreach (var category in Categories)
             {
                 var categoryOfItem = new MenuCategoryModel
                 {
@@ -121,9 +117,9 @@ namespace RastaurantPosMAUI.ViewModels
                     Id = category.Id,
                     Name = category.Name
                 };
-                if(itemCategories.Any(c=> c.Id == category.Id))
+                if (itemCategories.Any(c => c.Id == category.Id))
                     categoryOfItem.IsSelected = true;
-                else 
+                else
                     categoryOfItem.IsSelected = false;
                 menuItemModel.Categories.Add(categoryOfItem);
             }
@@ -146,7 +142,7 @@ namespace RastaurantPosMAUI.ViewModels
             //Save this item to database
             var errorMessage = await _databaseService.SaveMenuItemAsync(model);
 
-            if (errorMessage != null) 
+            if (errorMessage != null)
             {
                 await Shell.Current.DisplayAlert("Error", errorMessage, "Ok");
             }
@@ -165,25 +161,25 @@ namespace RastaurantPosMAUI.ViewModels
 
         private void HandleMenuItemChanged(MenuItemModel model)
         {
-            var menuItem= MenuItems.FirstOrDefault(m=> m.Id == model.Id);
-            if (menuItem != null) 
+            var menuItem = MenuItems.FirstOrDefault(m => m.Id == model.Id);
+            if (menuItem != null)
             {
                 //This menu item is on the screen the right now
 
                 //check if the the this still has a mapping to selected category
-                if (!model.SelectedCategories.Any(c => c.Id == SelectedCategory.Id)) 
+                if (!model.SelectedCategories.Any(c => c.Id == SelectedCategory.Id))
                 {
                     //This item no longer belongs to the selected category
                     //Remove this item from the current UI Menu Items list
-                    MenuItems = [.. MenuItems.Where(m=>m.Id == model.Id)];
+                    MenuItems = [.. MenuItems.Where(m => m.Id == model.Id)];
                     return;
                 }
 
                 //update the details
-                menuItem.Price= model.Price;
-                menuItem.Description= model.Description;
-                menuItem.Name= model.Name;
-                menuItem.Icon= model.Icon;
+                menuItem.Price = model.Price;
+                menuItem.Description = model.Description;
+                menuItem.Name = model.Name;
+                menuItem.Icon = model.Icon;
 
                 MenuItems = [.. MenuItems];
             }

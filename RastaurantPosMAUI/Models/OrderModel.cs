@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using RastaurantPosMAUI.Data;
+using RastaurantPosMAUI.Data.Entities;
 
 namespace RastaurantPosMAUI.Models
 {

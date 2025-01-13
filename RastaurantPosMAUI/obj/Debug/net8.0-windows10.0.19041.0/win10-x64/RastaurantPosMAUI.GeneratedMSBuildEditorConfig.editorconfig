@@ -8,7 +8,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RastaurantPosMAUI
-build_property.ProjectDir = C:\Users\Geotek\source\repos\RastaurantPosMAUI\RastaurantPosMAUI\
+build_property.ProjectDir = C:\Users\Geotek\OneDrive\Masaüstü\RastaurantPosMAUI\RastaurantPosMAUI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -22,73 +22,73 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/App.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/AppShell.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/CategoriesListControl.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Controls/CategoriesListControl.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.CategoriesListControl.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\CategoriesListControl.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\CategoriesListControl.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/CurrentDateTimeControl.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Controls/CurrentDateTimeControl.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.CurrentDateTimeControl.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\CurrentDateTimeControl.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\CurrentDateTimeControl.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/HelpPopup.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Controls/HelpPopup.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.HelpPopup.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\HelpPopup.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\HelpPopup.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/MenuItemsListControl.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Controls/MenuItemsListControl.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.MenuItemsListControl.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\MenuItemsListControl.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\MenuItemsListControl.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Controls/SaveMenuItemFormControl.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Controls/SaveMenuItemFormControl.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Controls.SaveMenuItemFormControl.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\SaveMenuItemFormControl.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\SaveMenuItemFormControl.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Pages/MainPage.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Pages.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Pages/ManageMenuItemPage.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Pages/ManageMenuItemPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Pages.ManageMenuItemPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\ManageMenuItemPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\ManageMenuItemPage.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Pages/OrdersPage.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Pages/OrdersPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Pages.OrdersPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\OrdersPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\OrdersPage.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Resources/Styles/Colors.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/Geotek/source/repos/RastaurantPosMAUI/RastaurantPosMAUI/Resources/Styles/Styles.xaml]
+[C:/Users/Geotek/OneDrive/Masaüstü/RastaurantPosMAUI/RastaurantPosMAUI/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RastaurantPosMAUI.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

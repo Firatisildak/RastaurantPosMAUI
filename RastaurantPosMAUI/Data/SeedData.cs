@@ -1,4 +1,7 @@
-﻿namespace RastaurantPosMAUI.Data;
+﻿using RastaurantPosMAUI.Data.Entities;
+using MenuItem = RastaurantPosMAUI.Data.Entities.MenuItem;
+
+namespace RastaurantPosMAUI.Data;
 
 public static class SeedData
 {
@@ -13,6 +16,7 @@ public static class SeedData
             new MenuCategory { Id = 5, Name = "Fast Food", Icon = "fast_food.png" }
         };
     }
+
     public static List<MenuItem> GetMenuItems()
     {
         return new List<MenuItem>
@@ -79,61 +83,61 @@ public static class SeedData
     {
         return new List<MenuItemCategoryMapping>
     {
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 1 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 6 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 7 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 8 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 10 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 11 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 32 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 47 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 48 },
-        new MenuItemCategoryMapping { MenuCategoryId = 1, MenuItemId = 49 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 2 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 13 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 14 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 18 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 20 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 22 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 23 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 24 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 26 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 28 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 29 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 31 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 34 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 35 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 38 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 39 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 40 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 41 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 45 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 50 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 51 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 52 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 53 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 54 },
-        new MenuItemCategoryMapping { MenuCategoryId = 2, MenuItemId = 55 },
-        new MenuItemCategoryMapping { MenuCategoryId = 3, MenuItemId = 3 },
-        new MenuItemCategoryMapping { MenuCategoryId = 3, MenuItemId = 15 },
-        new MenuItemCategoryMapping { MenuCategoryId = 3, MenuItemId = 16 },
-        new MenuItemCategoryMapping { MenuCategoryId = 3, MenuItemId = 17 },
-        new MenuItemCategoryMapping { MenuCategoryId = 3, MenuItemId = 19 },
-        new MenuItemCategoryMapping { MenuCategoryId = 3, MenuItemId = 30 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 5 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 8 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 9 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 21 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 25 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 27 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 33 },
-        new MenuItemCategoryMapping { MenuCategoryId = 4, MenuItemId = 36 },
-        new MenuItemCategoryMapping { MenuCategoryId = 5, MenuItemId = 4 },
-        new MenuItemCategoryMapping { MenuCategoryId = 5, MenuItemId = 12 },
-        new MenuItemCategoryMapping { MenuCategoryId = 5, MenuItemId = 37 },
-        new MenuItemCategoryMapping { MenuCategoryId = 5, MenuItemId = 38 },
-        new MenuItemCategoryMapping { MenuCategoryId = 5, MenuItemId = 45 },
-        new MenuItemCategoryMapping { MenuCategoryId = 5, MenuItemId = 46 }
+        new MenuItemCategoryMapping { Id = 1, MenuCategoryId = 1, MenuItemId = 1 },
+        new MenuItemCategoryMapping { Id = 2, MenuCategoryId = 1, MenuItemId = 6 },
+        new MenuItemCategoryMapping { Id = 3, MenuCategoryId = 1, MenuItemId = 7 },
+        new MenuItemCategoryMapping { Id = 4, MenuCategoryId = 1, MenuItemId = 8 },
+        new MenuItemCategoryMapping { Id = 5, MenuCategoryId = 1, MenuItemId = 10 },
+        new MenuItemCategoryMapping { Id = 6,MenuCategoryId = 1, MenuItemId = 11 },
+        new MenuItemCategoryMapping { Id = 7,MenuCategoryId = 1, MenuItemId = 32 },
+        new MenuItemCategoryMapping { Id = 8,MenuCategoryId = 1, MenuItemId = 47 },
+        new MenuItemCategoryMapping { Id = 9,MenuCategoryId = 1, MenuItemId = 48 },
+        new MenuItemCategoryMapping { Id = 10,MenuCategoryId = 1, MenuItemId = 49 },
+        new MenuItemCategoryMapping { Id = 11,MenuCategoryId = 2, MenuItemId = 2 },
+        new MenuItemCategoryMapping { Id = 12,MenuCategoryId = 2, MenuItemId = 13 },
+        new MenuItemCategoryMapping { Id = 13,MenuCategoryId = 2, MenuItemId = 14 },
+        new MenuItemCategoryMapping { Id = 14,MenuCategoryId = 2, MenuItemId = 18 },
+        new MenuItemCategoryMapping { Id = 15,MenuCategoryId = 2, MenuItemId = 20 },
+        new MenuItemCategoryMapping { Id = 16,MenuCategoryId = 2, MenuItemId = 22 },
+        new MenuItemCategoryMapping { Id = 17,MenuCategoryId = 2, MenuItemId = 23 },
+        new MenuItemCategoryMapping { Id = 18,MenuCategoryId = 2, MenuItemId = 24 },
+        new MenuItemCategoryMapping { Id = 19,MenuCategoryId = 2, MenuItemId = 26 },
+        new MenuItemCategoryMapping { Id = 20,MenuCategoryId = 2, MenuItemId = 28 },
+        new MenuItemCategoryMapping { Id = 21,MenuCategoryId = 2, MenuItemId = 29 },
+        new MenuItemCategoryMapping { Id = 22,MenuCategoryId = 2, MenuItemId = 31 },
+        new MenuItemCategoryMapping { Id = 23,MenuCategoryId = 2, MenuItemId = 34 },
+        new MenuItemCategoryMapping { Id = 24,MenuCategoryId = 2, MenuItemId = 35 },
+        new MenuItemCategoryMapping { Id = 25,MenuCategoryId = 2, MenuItemId = 38 },
+        new MenuItemCategoryMapping { Id = 26,MenuCategoryId = 2, MenuItemId = 39 },
+        new MenuItemCategoryMapping { Id = 27,MenuCategoryId = 2, MenuItemId = 40 },
+        new MenuItemCategoryMapping { Id = 28,MenuCategoryId = 2, MenuItemId = 41 },
+        new MenuItemCategoryMapping { Id = 29,MenuCategoryId = 2, MenuItemId = 45 },
+        new MenuItemCategoryMapping { Id = 30,MenuCategoryId = 2, MenuItemId = 50 },
+        new MenuItemCategoryMapping { Id = 31,MenuCategoryId = 2, MenuItemId = 51 },
+        new MenuItemCategoryMapping { Id = 32,MenuCategoryId = 2, MenuItemId = 52 },
+        new MenuItemCategoryMapping { Id = 33,MenuCategoryId = 2, MenuItemId = 53 },
+        new MenuItemCategoryMapping { Id = 34,MenuCategoryId = 2, MenuItemId = 54 },
+        new MenuItemCategoryMapping { Id = 35,MenuCategoryId = 2, MenuItemId = 55 },
+        new MenuItemCategoryMapping { Id = 36,MenuCategoryId = 3, MenuItemId = 3 },
+        new MenuItemCategoryMapping { Id = 37,MenuCategoryId = 3, MenuItemId = 15 },
+        new MenuItemCategoryMapping { Id = 38,MenuCategoryId = 3, MenuItemId = 16 },
+        new MenuItemCategoryMapping { Id = 39,MenuCategoryId = 3, MenuItemId = 17 },
+        new MenuItemCategoryMapping { Id = 40,MenuCategoryId = 3, MenuItemId = 19 },
+        new MenuItemCategoryMapping { Id = 41,MenuCategoryId = 3, MenuItemId = 30 },
+        new MenuItemCategoryMapping { Id = 42,MenuCategoryId = 4, MenuItemId = 5 },
+        new MenuItemCategoryMapping { Id = 43,MenuCategoryId = 4, MenuItemId = 8 },
+        new MenuItemCategoryMapping { Id = 44,MenuCategoryId = 4, MenuItemId = 9 },
+        new MenuItemCategoryMapping { Id = 45,MenuCategoryId = 4, MenuItemId = 21 },
+        new MenuItemCategoryMapping { Id = 46,MenuCategoryId = 4, MenuItemId = 25 },
+        new MenuItemCategoryMapping { Id = 47,MenuCategoryId = 4, MenuItemId = 27 },
+        new MenuItemCategoryMapping { Id = 48,MenuCategoryId = 4, MenuItemId = 33 },
+        new MenuItemCategoryMapping { Id = 49,MenuCategoryId = 4, MenuItemId = 36 },
+        new MenuItemCategoryMapping { Id = 50,MenuCategoryId = 5, MenuItemId = 4 },
+        new MenuItemCategoryMapping { Id = 51,MenuCategoryId = 5, MenuItemId = 12 },
+        new MenuItemCategoryMapping { Id = 52,MenuCategoryId = 5, MenuItemId = 37 },
+        new MenuItemCategoryMapping { Id = 53,MenuCategoryId = 5, MenuItemId = 38 },
+        new MenuItemCategoryMapping { Id = 54,MenuCategoryId = 5, MenuItemId = 45 },
+        new MenuItemCategoryMapping { Id = 55,MenuCategoryId = 5, MenuItemId = 46 }
     };
     }
 }

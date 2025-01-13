@@ -28,8 +28,8 @@ namespace RastaurantPosMAUI.ViewModels
             WeakReferenceMessenger.Default.Send(NameChangedMessage.From(name));
         }
 
-        public int GetTaxPercentage()=>Preferences.Default.Get<int>(TaxPercentagekey, 0);
+        public int GetTaxPercentage() => Preferences.Default.Get<int>(TaxPercentagekey, 0);
 
-        public void SetTaxPercentage(int taxPercentage)=>Preferences.Default.Set<int>(TaxPercentagekey, taxPercentage);
+        public void SetTaxPercentage(int taxPercentage) => Preferences.Default.Set<int>(TaxPercentagekey, taxPercentage);
     }
 }

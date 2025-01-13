@@ -1,5 +1,5 @@
 ﻿using RastaurantPosMAUI.ViewModels;
-using MenuItem = RastaurantPosMAUI.Data.MenuItem;
+using MenuItem = RastaurantPosMAUI.Data.Entities.MenuItem;
 
 namespace RastaurantPosMAUI.Pages;
 

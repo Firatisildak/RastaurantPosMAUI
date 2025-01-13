@@ -3,9 +3,9 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using RastaurantPosMAUI.Data;
 using RastaurantPosMAUI.Models;
+using RastaurantPosMAUI.Services;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using MenuItem = RastaurantPosMAUI.Data.MenuItem;
+using MenuItem = RastaurantPosMAUI.Data.Entities.MenuItem;
 
 namespace RastaurantPosMAUI.ViewModels
 {
@@ -39,7 +39,7 @@ namespace RastaurantPosMAUI.ViewModels
         [NotifyPropertyChangedFor(nameof(Total))]
         private int _taxPercentage;
 
-        public decimal TaxAmount => (Subtotal * TaxPercentage)/100;
+        public decimal TaxAmount => (Subtotal * TaxPercentage) / 100;
 
         public decimal Total => Subtotal + TaxAmount;
 
@@ -50,7 +50,7 @@ namespace RastaurantPosMAUI.ViewModels
         {
             _databaseService = databaseService;
             _ordersViewModel = ordersViewModel;
-            _settingsViewModel= settingsViewModel;
+            _settingsViewModel = settingsViewModel;
             CartItems.CollectionChanged += CartItems_CollectionChanged;
 
             WeakReferenceMessenger.Default.Register<MenuItemChangedMessage>(this);
@@ -133,7 +133,7 @@ namespace RastaurantPosMAUI.ViewModels
 
                 CartItems.Add(cartItem);
             }
-            else 
+            else
             {
                 //This item exists in cart
                 //Increase the quantity for this item in the cart
@@ -160,12 +160,12 @@ namespace RastaurantPosMAUI.ViewModels
         }
 
         [RelayCommand]
-        private void RemoveItemFromCart(CartModel cartItem)=> CartItems.Remove(cartItem);
+        private void RemoveItemFromCart(CartModel cartItem) => CartItems.Remove(cartItem);
 
         [RelayCommand]
         private async Task ClearCartAsync()
         {
-            if(await Shell.Current.DisplayAlert("Clear Cart", "Do you really want to clear the cart", "Yes", "No"))
+            if (await Shell.Current.DisplayAlert("Clear Cart", "Do you really want to clear the cart", "Yes", "No"))
             {
                 CartItems.Clear();
             }
@@ -173,23 +173,23 @@ namespace RastaurantPosMAUI.ViewModels
 
         private void RecalculateAmounts()
         {
-            Subtotal=CartItems.Sum(c => c.Amount);
+            Subtotal = CartItems.Sum(c => c.Amount);
         }
 
         [RelayCommand]
         private async Task TaxPercentageClickAsync()
         {
             var result = await Shell.Current.DisplayPromptAsync("Tax Percentage", "Enter the applicable tax percentage", placeholder: "10", initialValue: TaxPercentage.ToString());
-            if (!string.IsNullOrWhiteSpace(result)) 
+            if (!string.IsNullOrWhiteSpace(result))
             {
-                if(!int.TryParse(result, out int enteredTaxPercentage))
+                if (!int.TryParse(result, out int enteredTaxPercentage))
                 {
                     await Shell.Current.DisplayAlert("Invalid Value", "Entered tax percentage is valid", "Ok");
                     return;
                 }
 
                 //it was a valid numeric value
-                if (enteredTaxPercentage > 100) 
+                if (enteredTaxPercentage > 100)
                 {
                     await Shell.Current.DisplayAlert("Invalid Value", "Tax percentage cannot be more than 100", "Ok");
                     return;
@@ -199,14 +199,15 @@ namespace RastaurantPosMAUI.ViewModels
                 //Save it in preferences
                 _settingsViewModel.SetTaxPercentage(enteredTaxPercentage);
 
-            }        
+            }
         }
 
         [RelayCommand]
         private async Task PlaceOrderAsync(bool isPaidOnline)
         {
             IsLoading = true;
-            if(await _ordersViewModel.PlaceOrderAsync([.. CartItems], isPaidOnline)){
+            if (await _ordersViewModel.PlaceOrderAsync([.. CartItems], isPaidOnline))
+            {
                 //Order creating successfull
                 //clear the cart items
                 CartItems.Clear();
@@ -258,18 +259,18 @@ namespace RastaurantPosMAUI.ViewModels
 
             //Check if the updated menu item is added in the cart
             //if yes, updated the info in the cart
-            var cartItem = CartItems.FirstOrDefault(c=>c.ItemId == model.Id);
-            if (cartItem != null) 
+            var cartItem = CartItems.FirstOrDefault(c => c.ItemId == model.Id);
+            if (cartItem != null)
             {
                 cartItem.Price = model.Price;
                 cartItem.Icon = model.Icon;
                 cartItem.Name = model.Name;
 
-                var itemIndex=CartItems.IndexOf(cartItem);
+                var itemIndex = CartItems.IndexOf(cartItem);
 
                 //It will trigger CollectionChanged event for replacng this item
                 //Which will recalculate amounts
-                CartItems[itemIndex]= cartItem;
+                CartItems[itemIndex] = cartItem;
             }
         }
     }

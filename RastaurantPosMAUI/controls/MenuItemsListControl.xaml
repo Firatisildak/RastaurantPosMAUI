@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RastaurantPosMAUI.Controls.MenuItemsListControl"
              xmlns:vm="clr-namespace:RastaurantPosMAUI.ViewModels"
-             xmlns:data="clr-namespace:RastaurantPosMAUI.Data"
+             xmlns:data="clr-namespace:RastaurantPosMAUI.Data.Entities"
              xmlns:models="clr-namespace:RastaurantPosMAUI.Models"
              xmlns:controls="clr-namespace:RastaurantPosMAUI.Controls"
              x:Name="this">
